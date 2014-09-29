@@ -22,6 +22,8 @@
   <body>
     <h1>CHESS.js</h1>
     
+    <p class="turn">White's turn</p>
+    
     <section class="board-wrapper group"></section>
   </body>
   
@@ -67,6 +69,8 @@
                 var pieceClass = $firstTile.attr("class");
                 $firstTile.removeClass().addClass("tile");
                 $secondTile.removeClass().addClass(pieceClass);
+                
+                $(".turn").html(capitalize(board.turn) + "'s turn")
               }
             }
             
@@ -106,6 +110,10 @@
     
     function getCoords(tile) {
       return tile.data("id").split("-").map(Math.floor);
+    }
+    
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
   </script>
 </html>
