@@ -33,8 +33,13 @@
       
       $(".tile").hover(function() {
         var piece = board.pieceAt(getCoords($(this)));
-        if (piece) {
-          $(this).toggleClass("hovered")
+        if (piece && board.turn === piece.color) {
+          $(this).addClass("hovered")
+        }
+      }, function() {
+        var piece = board.pieceAt(getCoords($(this)));
+        if (piece && board.turn === piece.color) {
+          $(this).removeClass("hovered")
         }
       })
       
@@ -55,11 +60,19 @@
             $secondTile = $(event.target);
             
             if ($secondTile.hasClass("potential")) {
+              var start_pos = getCoords($firstTile);
+              var end_pos = getCoords($secondTile);
               
-            } else {
-              $(".tile").removeClass("selected potential");
-              $(".board").off("click.sec");
+              if (board.move(start_pos, end_pos)) {
+                var pieceClass = $firstTile.attr("class");
+                $firstTile.removeClass().addClass("tile");
+                $secondTile.removeClass().addClass(pieceClass);
+              }
             }
+            
+            $(".tile").removeClass("selected potential");
+            $(".board").off("click.sec");
+            
           });
         } 
       });
