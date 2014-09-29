@@ -28,17 +28,43 @@
   <script>
     $(document).ready(function() {
       var board = new Chess.Board;
+      board.resetAllMovesets();
       generateBoard(board);
       
       $(".tile").hover(function() {
-        var coords = $(this).data("id").split("-").map(Math.floor);
-        var piece = board.pieceAt(coords);
+        var piece = board.pieceAt(getCoords($(this)));
         if (piece) {
-          $(this).toggleClass("selected")
+          $(this).toggleClass("hovered")
         }
       })
       
-    })
+      $(".board").click(".tile", function(event) {
+        $firstTile = $(event.target)
+        
+        if ($firstTile.hasClass("hovered")) {
+          var piece = board.pieceAt(getCoords($firstTile));
+          $firstTile.addClass("selected")
+          
+          piece.validMoves.forEach(function(pos) {
+            $(".board")
+              .find("[data-id='" + pos[0] + "-" + pos[1] + "']")
+              .addClass("potential");
+          })
+          
+          $(".board").on("click.sec", ".tile", function(event) {
+            $secondTile = $(event.target);
+            
+            if ($secondTile.hasClass("potential")) {
+              
+            } else {
+              $(".tile").removeClass("selected potential");
+              $(".board").off("click.sec");
+            }
+          });
+        } 
+      });
+      
+    });
     
     function generateBoard(board) {
       var $board = $("<ul>").addClass("board group");
@@ -47,7 +73,7 @@
       for (var i = 0; i < 8; i++) {
         var $row = $("<ul>")
           .addClass("row group")
-            .attr("data-id", 7 - i)
+          .attr("data-id", 7 - i)
         $board.append($row);
         
         for (var j = 0; j < 8; j++) {
@@ -63,6 +89,10 @@
           $row.append($tile);
         }
       }
+    }
+    
+    function getCoords(tile) {
+      return tile.data("id").split("-").map(Math.floor);
     }
   </script>
 </html>

@@ -53,9 +53,21 @@ h1 {
   background: #999;
 }
 
-.board > .row > .tile.selected {
+.board > .row > .tile.hovered {
   cursor: pointer;
   background: #E8FC00;
+}
+
+.board > .row > .tile.selected {
+  cursor: pointer;
+  background: #FC00E9;
+}
+
+.board > .row > .tile.potential {
+  cursor: pointer;
+  background: #FC8A00;
+  box-sizing: border-box;
+  border: 10px solid #965200;
 }
 
 /* PIECE STYLES */
