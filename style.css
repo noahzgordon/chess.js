@@ -1,1 +1,54 @@
 /* RESETS */
+
+h1, section, ul, li {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* CLEARFIX */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ELEMENTS */
+
+h1 {
+  font-size: 26px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.board-wrapper {
+  width: 800px;
+  height: 800px;
+  border: 5px solid #000;
+  margin: 20px auto;
+}
+
+.tile {
+  display: block;
+  float :left;
+  height: 100px;
+  width: 100px;
+}
+
+/* BOARD COLORING */
+
+.row:nth-child(odd) > .tile:nth-child(odd),
+.row:nth-child(even) > .tile:nth-child(even) {
+  background: #ddd;
+}
+
+.row:nth-child(odd) > .tile:nth-child(even),
+.row:nth-child(even) > .tile:nth-child(odd) {
+  background: #555;
+}
