@@ -51,113 +51,143 @@ p {
 
 /* BOARD COLORING */
 
-.row:nth-child(odd) > .tile:nth-child(odd),
-.row:nth-child(even) > .tile:nth-child(even) {
-  background: #ddd;
+.row:nth-child(odd) .tile:nth-child(odd),
+.row:nth-child(even) .tile:nth-child(even) {
+  background-color: #ddd;
 }
 
-.row:nth-child(odd) > .tile:nth-child(even),
-.row:nth-child(even) > .tile:nth-child(odd) {
-  background: #999;
+.row:nth-child(odd) .tile:nth-child(even),
+.row:nth-child(even) .tile:nth-child(odd) {
+  background-color: #999;
 }
 
 .board > .row > .tile.hovered {
   cursor: pointer;
-  background: #E8FC00;
+  background-color: #E8FC00;
 }
 
 .board > .row > .tile.selected {
   cursor: pointer;
-  background: #FC00E9;
+  background-color: #FC00E9;
 }
 
 .board > .row > .tile.potential {
-  cursor: pointer;
-  background: #FC8A00;
+  background-color: #FC8A00;
   box-sizing: border-box;
   border: 10px solid #965200;
 }
 
+.board > .row > .tile.potential:hover {
+  cursor: pointer;
+  background-color: #FDB300;
+}
+
+.captured-wrapper {
+  width: 1000px;
+  display: block;
+  margin: 20px auto;
+  min-height: 200px;
+}
+
+.black-captured, .white-captured {
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  width: 500px;
+  padding: 20px;
+}
+
+.capture {
+  height: 50px;
+  width: 50px;
+  display: block;
+  float: right;
+}
+
+.black-captured > .capture {
+  float: left;
+}
+
 /* PIECE STYLES */
 
-.board > .row > .tile.pawn.white {
+.pawn.white {
   background-image: url("images/piece_sets/standard/white_pawn.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.pawn.black {
+.pawn.black {
   background-image: url("images/piece_sets/standard/black_pawn.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.rook.white {
+.rook.white {
   background-image: url("images/piece_sets/standard/white_rook.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.rook.black {
+.rook.black {
   background-image: url("images/piece_sets/standard/black_rook.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.bishop.white {
+.bishop.white {
   background-image: url("images/piece_sets/standard/white_bishop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.bishop.black {
+.bishop.black {
   background-image: url("images/piece_sets/standard/black_bishop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.knight.white {
+.knight.white {
   background-image: url("images/piece_sets/standard/white_knight.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.knight.black {
+.knight.black {
   background-image: url("images/piece_sets/standard/black_knight.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.queen.white {
+.queen.white {
   background-image: url("images/piece_sets/standard/white_queen.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.queen.black {
+.queen.black {
   background-image: url("images/piece_sets/standard/black_queen.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.king.white {
+.king.white {
   background-image: url("images/piece_sets/standard/white_king.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.board > .row > .tile.king.black {
+.king.black {
   background-image: url("images/piece_sets/standard/black_king.png");
   background-size: cover;
   background-position: center;

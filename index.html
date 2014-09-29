@@ -25,6 +25,11 @@
     <p class="turn">White's turn</p>
     
     <section class="board-wrapper group"></section>
+    
+    <section class="captured-wrapper group">
+      <article class="white-captured"></article>
+      <article class="black-captured"></article>
+    </section>
   </body>
   
   <script>
@@ -71,6 +76,7 @@
                 $secondTile.removeClass().addClass(pieceClass);
                 
                 $(".turn").html(capitalize(board.turn) + "'s turn")
+                updateCaptures(board);
               }
             }
             
@@ -106,6 +112,29 @@
           $row.append($tile);
         }
       }
+    }
+    
+    function updateCaptures(board) {
+      $whites = $(".white-captured").empty();
+      $blacks = $(".black-captured").empty();
+      
+      board.capturedWhites.forEach(function(piece) {
+        $div = $("<div>")
+          .addClass("capture")
+          .addClass(piece.pieceName)
+          .addClass(piece.color);
+          
+        $whites.append($div);
+      })
+      
+      board.capturedBlacks.forEach(function(piece) {
+        $div = $("<div>")
+          .addClass("capture")
+          .addClass(piece.pieceName)
+          .addClass(piece.color);
+          
+        $blacks.append($div);
+      })
     }
     
     function getCoords(tile) {
