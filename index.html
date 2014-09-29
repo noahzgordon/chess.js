@@ -27,11 +27,20 @@
   
   <script>
     $(document).ready(function() {
-      generateBoard();
+      var board = new Chess.Board;
+      generateBoard(board);
+      
+      $(".tile").hover(function() {
+        var coords = $(this).data("id").split("-").map(Math.floor);
+        var piece = board.pieceAt(coords);
+        if (piece) {
+          $(this).toggleClass("selected")
+        }
+      })
       
     })
     
-    function generateBoard() {
+    function generateBoard(board) {
       var $board = $("<ul>").addClass("board group");
       $(".board-wrapper").append($board);
       
@@ -40,13 +49,17 @@
           .addClass("row group")
             .attr("data-id", 7 - i)
         $board.append($row);
+        
         for (var j = 0; j < 8; j++) {
+          var coords = [j, 7 - i]
           var $tile = $("<li>")
             .addClass("tile")
-            .attr("data-id", coords);
-          var coords = (7 - i) + "-" + j
-          $tile
+            .attr("data-id", coords[0] + "-" + coords[1]);
           
+          var piece = board.pieceAt(coords);
+          if (piece) {
+            $tile.addClass(piece.pieceName).addClass(piece.color);
+          }
           $row.append($tile);
         }
       }

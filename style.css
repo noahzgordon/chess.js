@@ -52,3 +52,94 @@ h1 {
 .row:nth-child(even) > .tile:nth-child(odd) {
   background: #999;
 }
+
+.board > .row > .tile.selected {
+  cursor: pointer;
+  background: #E8FC00;
+}
+
+/* PIECE STYLES */
+
+.board > .row > .tile.pawn.white {
+  background-image: url("images/piece_sets/standard/white_pawn.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.pawn.black {
+  background-image: url("images/piece_sets/standard/black_pawn.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.rook.white {
+  background-image: url("images/piece_sets/standard/white_rook.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.rook.black {
+  background-image: url("images/piece_sets/standard/black_rook.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.bishop.white {
+  background-image: url("images/piece_sets/standard/white_bishop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.bishop.black {
+  background-image: url("images/piece_sets/standard/black_bishop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.knight.white {
+  background-image: url("images/piece_sets/standard/white_knight.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.knight.black {
+  background-image: url("images/piece_sets/standard/black_knight.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.queen.white {
+  background-image: url("images/piece_sets/standard/white_queen.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.queen.black {
+  background-image: url("images/piece_sets/standard/black_queen.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.king.white {
+  background-image: url("images/piece_sets/standard/white_king.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.board > .row > .tile.king.black {
+  background-image: url("images/piece_sets/standard/black_king.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
