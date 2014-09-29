@@ -50,5 +50,5 @@ h1 {
 
 .row:nth-child(odd) > .tile:nth-child(even),
 .row:nth-child(even) > .tile:nth-child(odd) {
-  background: #555;
+  background: #999;
 }
