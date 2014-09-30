@@ -36,8 +36,8 @@ p {
 }
 
 .board-wrapper {
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   border: 5px solid #000;
   margin: 20px auto;
 }
@@ -45,8 +45,8 @@ p {
 .tile {
   display: block;
   float :left;
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
 }
 
 /* BOARD COLORING */
@@ -74,7 +74,7 @@ p {
 .board > .row > .tile.potential {
   background-color: #FC8A00;
   box-sizing: border-box;
-  border: 10px solid #965200;
+  border: 6px solid #965200;
 }
 
 .board > .row > .tile.potential:hover {
@@ -83,7 +83,7 @@ p {
 }
 
 .captured-wrapper {
-  width: 1000px;
+  width: 800px;
   display: block;
   margin: 20px auto;
   min-height: 200px;
