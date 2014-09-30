@@ -36,7 +36,7 @@
   
   <script>
     $(document).ready(function() {
-      var board = new Chess.Board;
+      var board = Chess.board = new Chess.Board;
       board.resetAllMovesets();
       generateBoard(board);
       
