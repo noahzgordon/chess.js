@@ -28,6 +28,8 @@
     
     <section class="board-wrapper group"></section>
     
+    <div class="check-indicator"></div>
+    
     <section class="captured-wrapper group">
       <article class="white-captured"></article>
       <article class="black-captured"></article>
@@ -79,6 +81,7 @@
                 
                 $(".turn").html(capitalize(board.turn) + "'s turn")
                 updateCaptures(board);
+                updateCheckStatus(board);
               }
             }
             
@@ -137,6 +140,26 @@
           
         $blacks.append($div);
       })
+    }
+    
+    function updateCheckStatus(board) {
+      $checkInd = $(".check-indicator")
+      
+      if (board.isInCheckmate("black")) {
+        $(".board").fadeOut(400, function() {
+          $(".board-wrapper").html("<p>Black is in checkmate. White wins!</p>")
+        });
+      } else if (board.isInCheckmate("white")) {
+        $(".board").fadeOut(400, function() {
+          $(".board-wrapper").html("<p>White is in checkmate. Black wins!</p>")
+        });
+      } else if (board.isInCheck("black")) {
+        $checkInd.html("Black is in check!")
+      } else if (board.isInCheck("white")) {
+        $checkInd.html("White is in check!")
+      } else {
+        $checkInd.empty();
+      }
     }
     
     function getCoords(tile) {

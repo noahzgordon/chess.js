@@ -1,6 +1,6 @@
 /* RESETS */
 
-h1, section, ul, li, p {
+html, body, h1, section, ul, li, p {
   padding: 0;
   margin: 0;
   border: 0;
@@ -11,7 +11,7 @@ ul, li {
   list-style: none;
 }
 
-h1, p {
+html, body, h1, p {
   font-family: sans-serif;
 }
 
@@ -42,11 +42,50 @@ p {
   margin: 20px auto;
 }
 
+.board-wrapper > p {
+  text-align: center;
+  font-size: 50px;
+  margin: 200px auto;
+}
+
 .tile {
   display: block;
   float :left;
   height: 75px;
   width: 75px;
+}
+
+.check-indicator {
+  text-align: center;
+  margin: auto;
+  font-size: 30px;
+  width: 1000px;
+}
+
+.captured-wrapper {
+  width: 800px;
+  display: block;
+  margin: 20px auto;
+  min-height: 100px;
+}
+
+.black-captured, .white-captured {
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  width: 400px;
+  padding: 20px;
+}
+
+.capture {
+  height: 50px;
+  width: 50px;
+  display: block;
+  float: right;
+}
+
+.black-captured > .capture {
+  float: left;
 }
 
 /* BOARD COLORING */
@@ -82,31 +121,6 @@ p {
   background-color: #FDB300;
 }
 
-.captured-wrapper {
-  width: 800px;
-  display: block;
-  margin: 20px auto;
-  min-height: 200px;
-}
-
-.black-captured, .white-captured {
-  display: block;
-  float: left;
-  box-sizing: border-box;
-  width: 500px;
-  padding: 20px;
-}
-
-.capture {
-  height: 50px;
-  width: 50px;
-  display: block;
-  float: right;
-}
-
-.black-captured > .capture {
-  float: left;
-}
 
 /* PIECE STYLES */
 
