@@ -43,9 +43,17 @@ p {
 }
 
 .board-wrapper > p {
+  display: block;
   text-align: center;
   font-size: 45px;
-  margin: 150px auto;
+  margin-top: 150px;
+}
+
+.board-wrapper > a {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  margin: 30px auto;
 }
 
 .tile {

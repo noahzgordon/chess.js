@@ -39,14 +39,17 @@
   
   <script>
     $(document).ready(function() {
+      Chess.newGame();
+    });
+    
+    Chess.newGame = function() {
       var board = new Chess.Board;
       board.resetAllMovesets();
       
       var ui = new Chess.UI(board)
       ui.generateBoard();
       ui.installHandlers();
-    });
+    }
     
-
   </script>
 </html>
